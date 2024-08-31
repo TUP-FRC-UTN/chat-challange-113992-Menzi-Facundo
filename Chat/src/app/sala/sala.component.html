@@ -18,7 +18,7 @@
             }
         </div>
     </div>
-    <div class="row ">
+    <div class="row mt-3">
         <div class="col-md-6">
             <app-mensaje [autor]="'Pepe'" (mensaje)="this.mensajeria.push($event)"></app-mensaje>
         </div>
@@ -26,7 +26,11 @@
             <app-mensaje [autor]="'María'" (mensaje)="this.mensajeria.push($event)"></app-mensaje>
         </div>
         
-        
+    </div>
+    <div class="row">
+        <div class="d-grid gap-2 mt-3">
+            <button (click)="Limpiar()" class="btn btn-warning">Limpiar</button>
+        </div>
     </div>
     
 </div>

@@ -27,6 +27,9 @@ export class SalaComponent implements OnInit {
         },
       ];
     }
+    Limpiar(){
+        this.mensajeria = [];
+    }
     
 
 

@@ -13,16 +13,19 @@ import { CommonModule } from '@angular/common';
 export class MensajeComponent {
   @Output() mensaje = new EventEmitter<Mensaje>();
   @Input() autor = '';
+  message = '';
   msj: Mensaje = {
     autor: '',
     texto: '',
     hora: new Date(),
   };
   Enviar() {
+
     this.msj.autor = this.autor;
-    this.msj.texto = this.msj.texto;
+    this.msj.texto = this.message;
     this.msj.hora = new Date();
     this.mensaje.emit(this.msj);
+    this.message = '';
   }
 
 }
