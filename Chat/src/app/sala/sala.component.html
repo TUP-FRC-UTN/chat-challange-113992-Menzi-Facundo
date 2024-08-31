@@ -1,0 +1,32 @@
+<div class="container mt-4 ">
+    <div class="card p-0">
+        <div class="card-header">
+            <h5 class="card-title mb-0">Sala de Chat</h5>
+        </div>
+        <div class="card-body">
+            <h6 class="card-subtitle mb-3">Conversación</h6>
+            @for (mensaje of mensajeria; track $index) 
+            {
+                @if (mensaje.autor == 'Pepe' ) {
+                    <p [ngStyle]="{'color': 'blue'}">{{mensaje.hora|date:'HH:mm'}}|{{mensaje.autor}}: {{mensaje.texto}}</p>
+                }
+                @else 
+                {
+                <p [ngStyle]="{'color': 'red'}">{{mensaje.hora|date:'HH:mm'}}|{{mensaje.autor}}: {{mensaje.texto}}</p>
+                }
+
+            }
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-6">
+            <app-mensaje [autor]="'Pepe'" (mensaje)="this.mensajeria.push($event)"></app-mensaje>
+        </div>
+        <div class="col-md-6">
+            <app-mensaje [autor]="'María'" (mensaje)="this.mensajeria.push($event)"></app-mensaje>
+        </div>
+        
+        
+    </div>
+    
+</div>
